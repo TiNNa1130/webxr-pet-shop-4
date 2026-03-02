@@ -297,4 +297,33 @@ onMounted(() => loadPets())
   flex-direction: column;
   gap: 10px;
 }
+
+@media (max-width: 768px) {
+  .pet-profile-page { padding-bottom: 80px; }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .page-header h1 { font-size: 20px; margin-bottom: 4px; }
+
+  .pet-grid {
+    grid-template-columns: 1fr; /* ✅ 手机改为1列更稳 */
+    gap: 12px;
+  }
+
+  .pet-card {
+    flex-direction: column; /* ✅ 卡片内容改上下 */
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .pet-avatar { width: 64px; height: 64px; font-size: 32px; }
+
+  .params { gap: 10px; flex-wrap: wrap; }
+  .pet-actions { flex-direction: row; }
+  .pet-actions .van-button { flex: 1; }
+}
 </style>

@@ -319,4 +319,30 @@ function goAR() {
   text-decoration: line-through;
   margin-left: 8px;
 }
+
+@media (max-width: 768px) {
+  .home-page { padding-bottom: 80px; }
+
+  .banner-section { margin-bottom: 20px; }
+  .banner-item {
+    height: 220px;
+    padding: 18px;
+  }
+
+  .banner-text h1 { font-size: 22px; margin-bottom: 10px; }
+  .banner-text p { font-size: 13px; margin-bottom: 14px; }
+
+  .section { margin-bottom: 22px; }
+  .section-title { font-size: 18px; margin-bottom: 14px; }
+  .section-header { margin-bottom: 14px; }
+
+  .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .feature-card { padding: 16px 12px; border-radius: 12px; }
+  .feature-icon { width: 52px; height: 52px; border-radius: 14px; }
+
+  .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .product-image { height: 140px; font-size: 16px; }
+  .product-info { padding: 12px; }
+  .product-price .current { font-size: 16px; }
+}
 </style>

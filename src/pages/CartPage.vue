@@ -297,4 +297,47 @@ onMounted(init)
   font-size: 12px; color: #bbb;
   display: flex; align-items: center; justify-content: center; gap: 4px;
 }
+
+@media (max-width: 768px) {
+  .cart-page { padding-bottom: 80px; }
+
+  .page-header { margin-bottom: 16px; }
+  .page-header h1 { font-size: 20px; }
+
+  .cart-content {
+    flex-direction: column; /* ✅ 左右变上下 */
+    gap: 12px;
+  }
+
+  .cart-summary {
+    width: 100%;           /* ✅ 不再固定 300px */
+    order: 2;
+  }
+
+  .summary-card {
+    position: static;      /* ✅ 取消 sticky */
+    top: auto;
+    padding: 16px;
+  }
+
+  /* ✅ 购物车条目：允许换行，避免挤成一条 */
+  .cart-item {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .item-image { width: 64px; height: 64px; }
+  .item-info { flex: 1 1 calc(100% - 64px - 40px); } /* 让信息区域更宽 */
+  .item-qty { width: 100%; }
+  .item-subtotal { width: 100%; text-align: left; }
+  
+  /* 删除按钮在手机上独占一行更舒服 */
+  .cart-item .van-button {
+    margin-left: auto;
+  }
+
+  .select-all-bar { padding: 12px 14px; border-radius: 12px; }
+}
+
 </style>
