@@ -322,4 +322,36 @@ onMounted(async () => {
 .ar-panel-header h3 { font-size: 18px; font-weight: 600; }
 .ar-content { flex: 1; overflow: hidden; background: #000; }
 .ar-no-model { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #f0f0f0; color: #999; }
+
+/* ✅ 详情页手机端适配 */
+@media (max-width: 768px) {
+  .product-detail-page { padding-bottom: 80px; }
+
+  .detail-content {
+    flex-direction: column;  /* ✅ 左右变上下 */
+    gap: 16px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .media-section {
+    width: 100%;            /* ✅ 480px 改成自适应 */
+  }
+
+  .media-actions {
+    flex-wrap: wrap;        /* ✅ 按钮自动换行 */
+    gap: 8px;
+  }
+  .media-actions .van-button {
+    flex: 1 1 120px;        /* ✅ 一行放不下就换行 */
+  }
+
+  .product-name { font-size: 18px; margin-bottom: 10px; }
+  .product-meta { flex-wrap: wrap; gap: 10px; }
+  .current-price { font-size: 24px; }
+  .price-box { padding: 14px; }
+
+  /* 尺码表在手机端容易挤：缩小第一列 */
+  .size-row { grid-template-columns: 52px 1fr 1fr 1fr; }
+}
 </style>

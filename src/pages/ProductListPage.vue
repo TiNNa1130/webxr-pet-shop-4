@@ -170,4 +170,47 @@ onMounted(() => { categories.value = getCategories(); loadProducts() })
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+/* ✅ 手机端适配：把左侧筛选栏改为顶部，商品网格改为2列 */
+@media (max-width: 768px) {
+  .product-list-page { padding-bottom: 80px; } /* 给底部 tabbar 多留点空间 */
+
+  .page-header { margin-bottom: 12px; }
+  .page-header h1 { font-size: 20px; }
+  .page-content {
+    flex-direction: column;  /* ✅ 从左右两栏改为上下结构 */
+    gap: 12px;
+  }
+
+  .filter-sidebar {
+    width: 100%;            /* ✅ 侧栏不再固定 200px */
+  }
+  .filter-group {
+    position: static;       /* ✅ 取消 sticky，避免手机端怪异 */
+    padding: 12px;
+    border-radius: 12px;
+  }
+  .filter-options {
+    display: flex;          /* ✅ 筛选项横向滚动 */
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .filter-options::-webkit-scrollbar { display: none; }
+
+  .filter-item {
+    white-space: nowrap;
+    margin-bottom: 0;       /* ✅ 横向滚动就不要竖向间距 */
+    flex-shrink: 0;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* ✅ 手机2列 */
+    gap: 12px;
+  }
+
+  .product-info { padding: 12px; }
+  .product-price .current { font-size: 16px; }
+}
 </style>
