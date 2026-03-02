@@ -390,4 +390,50 @@ watch(() => props.modelValue, (v) => {
 .algo-arrow { color: #FF6B35; font-weight: 700; }
 
 .tryon-actions { display: flex; flex-direction: column; gap: 10px; margin-top: auto; padding-top: 8px; }
+
+/* ✅ 虚拟试穿弹窗：移动端自适应 */
+@media (max-width: 768px) {
+  .tryon-header {
+    padding: 14px 14px 12px;
+  }
+
+  .tryon-body {
+    flex-direction: column;   /* ✅ 左右 -> 上下 */
+    overflow: auto;
+  }
+
+  /* 上半：3D 区 */
+  .tryon-3d {
+    padding: 12px;
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .model-wrap {
+    height: 42vh;             /* ✅ 给 3D 一个稳定高度 */
+    min-height: 260px;
+  }
+
+  .size-result { margin-top: 12px; }
+
+  /* 下半：控制区 */
+  .tryon-controls {
+    width: 100%;              /* ✅ 取消 320px 固定宽 */
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .product-info-bar { padding: 10px; }
+  .control-section { padding: 12px; }
+
+  /* chip 太密就允许横向滚动也行（可选） */
+  .sku-options {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
+  .sku-options::-webkit-scrollbar { display: none; }
+  .sku-chip { white-space: nowrap; flex-shrink: 0; }
+}
+
 </style>

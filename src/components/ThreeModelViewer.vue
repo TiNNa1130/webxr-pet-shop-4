@@ -251,4 +251,19 @@ defineExpose({
   80% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+/* ✅ 3D Viewer：移动端保证可见高度 */
+@media (max-width: 768px) {
+  .model-viewer-container {
+    min-height: 260px;
+    height: 42vh;             /* 如果父容器没给高度，也能正常显示 */
+    border-radius: 12px;
+  }
+
+  .hint-overlay {
+    bottom: 10px;
+    font-size: 11px;
+  }
+}
+
 </style>
