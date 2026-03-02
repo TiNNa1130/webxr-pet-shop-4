@@ -192,6 +192,7 @@ defineExpose({
   background: linear-gradient(180deg, #f8f8f8 0%, #eeeeee 100%);
   border-radius: var(--radius-md);
   overflow: hidden;
+  touch-action: pan-y;   /* ✅ 允许纵向滚动穿透 */
 }
 
 /* 加载状态 */

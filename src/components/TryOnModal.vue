@@ -286,6 +286,11 @@ watch(() => props.modelValue, (v) => {
 .tryon-body {
   flex: 1; overflow: hidden;
   display: flex; gap: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* ✅ iOS 惯性滚动 */
+  overscroll-behavior: contain;       /* ✅ 防止带动背后页面 */
+  touch-action: pan-y;                /* ✅ 明确允许纵向滚动 */
+
 }
 
 /* 左侧 3D */
@@ -295,6 +300,7 @@ watch(() => props.modelValue, (v) => {
   padding: 20px;
   border-right: 1px solid #f0f0f0;
   background: #fafafa;
+  overflow: visible;
 }
 
 .model-wrap {
@@ -337,6 +343,7 @@ watch(() => props.modelValue, (v) => {
   overflow-y: auto;
   padding: 16px;
   gap: 16px;
+  overflow: visible;
 }
 
 .product-info-bar {
@@ -435,5 +442,4 @@ watch(() => props.modelValue, (v) => {
   .sku-options::-webkit-scrollbar { display: none; }
   .sku-chip { white-space: nowrap; flex-shrink: 0; }
 }
-
 </style>
